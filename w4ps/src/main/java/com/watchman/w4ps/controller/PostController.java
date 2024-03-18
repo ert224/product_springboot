@@ -12,19 +12,28 @@ import org.springframework.web.bind.annotation.RestController;
 import com.watchman.w4ps.model.PostLikes;
 import com.watchman.w4ps.model.Product;
 import com.watchman.w4ps.repo.PostRepo;
+import com.watchman.w4ps.repo.UsersRepo;
 
 @RestController
 public class PostController {
-        
-        @Autowired
-        PostRepo repo;
-        
-        @RequestMapping(value = "/posts", method = RequestMethod.GET)
-        public ResponseEntity<Object> getPosts() {
-        //    repo.findAll();
-           return new ResponseEntity<>(repo.findAll(), HttpStatus.OK);
-    
-        }
-    
-    
+
+    @Autowired
+    PostRepo postRepo;
+    @Autowired
+    UsersRepo userRepo;
+
+    @RequestMapping(value = "/posts", method = RequestMethod.GET)
+    public ResponseEntity<Object> getPosts() {
+        // repo.findAll();
+        return new ResponseEntity<>(postRepo.findAll(), HttpStatus.OK);
+
     }
+
+    @RequestMapping(value = "/users", method = RequestMethod.GET)
+    public ResponseEntity<Object> getUsers() {
+        // repo.findAll();
+        return new ResponseEntity<>(userRepo.findAll(), HttpStatus.OK);
+
+    }
+
+}
