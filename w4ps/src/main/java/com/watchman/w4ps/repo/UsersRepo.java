@@ -9,7 +9,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.watchman.w4ps.model.User;
 
 @RepositoryRestResource
-public interface UsersRepo extends JpaRepository<User,Long> {
+public interface UsersRepo extends JpaRepository<User,String> {
 
     
 } 

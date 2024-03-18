@@ -15,7 +15,7 @@ public class User {
      * The ID of this row of the database
      */
     @Id
-    private long uid;
+    private String uid; // Changed type to String
     /**
      * The username stored in this row
      */
