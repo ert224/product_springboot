@@ -11,10 +11,10 @@ public class RandomService implements CommandLineRunner {
 	@Value("${spring.application.name:demoservice}") // default value demoservice 
 	private String name;
     	//endpoint for returning data 
-	@RequestMapping(value = "/")
-	public String name() {
-	   return name;
-	}
+	// @RequestMapping(value = "/")
+	// public String name() {
+	//    return name;
+	// }
 
     
 	/*

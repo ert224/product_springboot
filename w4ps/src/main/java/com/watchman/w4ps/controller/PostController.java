@@ -36,4 +36,20 @@ public class PostController {
 
     }
 
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String home() {
+        // repo.findAll();
+        return "Home";
+
+    }
+
+    @RequestMapping(value = "/secured", method = RequestMethod.GET)
+    public String secured() {
+        // repo.findAll();
+        return "hello secured";
+
+    }
+
+
+
 }
