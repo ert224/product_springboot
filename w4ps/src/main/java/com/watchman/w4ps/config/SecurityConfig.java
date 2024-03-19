@@ -13,13 +13,20 @@ public class SecurityConfig  {
 
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
+        // .csrf(csrf -> csrf.disable())
         return http
         .authorizeHttpRequests( auth -> {
-            auth.requestMatchers("/").permitAll();
+            auth.requestMatchers("/").permitAll(); 
+            // add the urls that will not require oauth 
             auth.anyRequest().authenticated();
 
         })
-        .oauth2Login(withDefaults())
+        .oauth2Login(
+            // Here we can provide our own custom 
+            withDefaults()
+
+            )
+        //specify that we want oauth2 to login for
         .formLogin(withDefaults())
         .build();
     }
